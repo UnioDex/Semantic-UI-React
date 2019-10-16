@@ -22,6 +22,9 @@ export interface StrictItemGroupProps {
 
   /** Items can be divided to better distinguish between grouped content. */
   divided?: boolean
+  
+  /** Inverts the color of the header for dark backgrounds. */
+  inverted?: boolean
 
   /** Shorthand array of props for Item. */
   items?: SemanticShorthandCollection<ItemProps>

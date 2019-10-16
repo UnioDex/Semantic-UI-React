@@ -17,11 +17,12 @@ import Item from './Item'
  * A group of items.
  */
 function ItemGroup(props) {
-  const { children, className, content, divided, items, link, relaxed, unstackable } = props
+  const { children, className, content, divided, inverted, items, link, relaxed, unstackable } = props
 
   const classes = cx(
     'ui',
     useKeyOnly(divided, 'divided'),
+    useKeyOnly(inverted, 'inverted'),
     useKeyOnly(link, 'link'),
     useKeyOnly(unstackable, 'unstackable'),
     useKeyOrValueAndKey(relaxed, 'relaxed'),
@@ -77,6 +78,9 @@ ItemGroup.propTypes = {
 
   /** Items can be divided to better distinguish between grouped content. */
   divided: PropTypes.bool,
+  
+  /** Inverts the color of the header for dark backgrounds. */
+  inverted: PropTypes.bool,
 
   /** Shorthand array of props for Item. */
   items: customPropTypes.collectionShorthand,
